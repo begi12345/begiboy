@@ -1,0 +1,242 @@
+from aiogram import Dispatcher,Bot,types
+from aiogram.utils import executor
+from aiogram.types import ReplyKeyboardMarkup ,KeyboardButton, ReplyKeyboardRemove
+from igzamk import telegram_bot,qrkod,mainmenu,getinfo,txtbtn,getbak,getcon,delete
+
+token = '6321814320:AAEqMaqeYboZQ0bIGilD6Emdpvgk58pJDTY'
+bot = Bot(token)
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=["start"])
+async def send_hi(message:types.Message):
+    image = open(file="me2.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image,
+        caption=f"Assalawma Aleykum 👋🏻\n Bonjour\n Hello\n Merhaba\n Aynyonhoseyo 🤗🤩 {message.from_user.first_name}.\nMen haqqimda ôzińizge qolayli bolğan usilda mağlumat aliñ 😎",reply_markup=getinfo)
+
+
+@dp.message_handler(text='Audio arqali 🎧')
+async def send_hi(message:types.Message):
+    await message.reply(text="ozinizge kereki tildi tanlan",reply_markup=telegram_bot)
+
+@dp.message_handler(text='QR code arqali 🧑‍💻')
+async def send_hi(message:types.Message):
+    await message.reply(text="ozinizge kereki tildi tanlan",reply_markup=qrkod)
+
+@dp.message_handler(text='Text tarizinde aliw 💬')
+async def send_hi(message:types.Message):
+    await message.reply(text="ozinizge kereki tildi tanlan",reply_markup=txtbtn)
+
+
+
+@dp.message_handler(text="Uzbek 🇺🇿")
+async def send_hi(message:types.Message):
+    audio = open(file="uzbek.mp3",mode="rb")
+    await bot.send_audio(
+        chat_id=message.from_user.id,
+        audio=audio,
+        )
+    
+@dp.message_handler(text="English 🇺🇸")
+async def send_hi(message:types.Message):
+    audio = open(file="english.mp3",mode="rb")
+    await bot.send_audio(
+        chat_id=message.from_user.id,
+        audio=audio,
+        )
+    
+@dp.message_handler(text="Korean 🇰🇷")
+async def send_hi(message:types.Message):
+    audio = open(file="korean.mp3",mode="rb")
+    await bot.send_audio(
+        chat_id=message.from_user.id,
+        audio=audio,
+        )
+@dp.message_handler(text="French 🇫🇷")
+async def send_hi(message:types.Message):
+    audio = open(file="french.mp3",mode="rb")
+    await bot.send_audio(
+        chat_id=message.from_user.id,
+        audio=audio,
+        )
+@dp.message_handler(text="Arabic 🇸🇦")
+async def send_hi(message:types.Message):
+    audio = open(file="arabic.mp3",mode="rb")
+    await bot.send_audio(
+        chat_id=message.from_user.id,
+        audio=audio,
+        )
+
+@dp.message_handler(text='arqaga qaytiw ↩️')
+async def send_hi(message:types.Message):
+    await message.reply(text="ozinizge kereki bolimdi tanlan",reply_markup=getinfo)
+
+
+@dp.message_handler(text='Knopkalardi joq etiw')
+async def send_hi(message:types.Message):
+    await message.answer("Siz qaytadan /start bassaniz boladi, hazirshe goodbye 😇",reply_markup=ReplyKeyboardRemove())
+
+@dp.message_handler(text='Maglumatti QRcode arqali aliw')
+async def send_hi(message:types.Message):
+    await message.reply(text="ozinizge kereki tildi tanlan",reply_markup=qrkod)
+
+@dp.message_handler(text='ozbek tili')
+async def send_hi(message:types.Message):
+    image = open(file="myqr.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image)
+
+@dp.message_handler(text='ingliz tili')
+async def send_hi(message:types.Message):
+    image = open(file="enqr.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image)
+
+@dp.message_handler(text='koreys tili')
+async def send_hi(message:types.Message):
+    image = open(file="krqr.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image)
+
+@dp.message_handler(text='Fransuz tili')
+async def send_hi(message:types.Message):
+    image = open(file="frqr.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image)
+
+@dp.message_handler(text='Arab tili')
+async def send_hi(message:types.Message):
+    image = open(file="arabqr.jpg",mode="rb")
+    await bot.send_photo(
+        chat_id=message.from_user.id,
+        photo=image)
+
+
+@dp.message_handler(text='bas menyuga qaytiw 🔄')
+async def send_hi(message:types.Message):
+    await message.answer("bas menyuga otildi",reply_markup=getinfo)
+
+@dp.message_handler(text='ozbek_tili')
+async def send_hi(message:types.Message):
+    await message.reply(text="Salom mening ismim Bakdaulet Ataniyazov. Men Qoraqalpog'iston Respublikasida tug'ilganman. men 22 yoshdaman. Men detektiv va melodrama filmlarini tomosha qilishni yaxshi ko'raman")
+
+@dp.message_handler(text='ingliz_tili')
+async def send_hi(message:types.Message):
+    await message.reply(text="Hello my name is Bakdaulet Ataniyazov. i was born in Karakalpakstan republic. i am 22 years old. i like watching detective and melodrama movies")
+
+@dp.message_handler(text='koreys_tili')
+async def send_hi(message:types.Message):
+    await message.reply(text="안녕하세요. 제 이름은 Bakdaulet Ataniyazov입니다. 나는 Karakalpakstan 공화국에서 태어났습니다. 나는 22 살이다. 나는 탐정영화나 멜로영화 보는 걸 좋아해")
+
+@dp.message_handler(text='Arab_tili')
+async def send_hi(message:types.Message):
+    await message.reply(text="مرحباً، اسمي باكدولت أتانيازوف. لقد ولدت في جمهورية كاراكالباكستان. عمري 22 عاما. أحب مشاهدة الأفلام البوليسية والميلودراما")
+
+@dp.message_handler(text='Fransuz_tili')
+async def send_hi(message:types.Message):
+    await message.reply(text="Bonjour, je m'appelle Bakdaulet Ataniyazov. je suis né dans la république du Karakalpakstan. J'ai 22 ans. j'aime regarder des films policiers et des mélodrames")
+
+@dp.message_handler(text='Menin menen baylanis')
+async def send_hi(message:types.Message):
+    await message.answer("menin menen qaysi usilda baylanbaqshisiz",reply_markup=getcon)
+
+@dp.message_handler(text='telefon arqali')
+async def send_hi(message:types.Message):
+    await message.answer("menin menen baylispaqshi bolganiniz ushin raxmet\n menin menen \n +99893-527-4-527\n +998-88-220-33-69\n telefon nomerleri arqali baylanisqa shiqsaniz boladi")
+
+@dp.message_handler(text='email yamasa sms telegram arqali')
+async def send_hi(message:types.Message):
+    await message.answer("menin menen baylispaqshi bolganiniz ushin raxmet\n menin menen\n bakdauletataniyazov2021@gmail.com\n ham yamasa telegram arqali @for6v9r \n profillerine baylanisqa shiqsaniz boladi")
+
+
+@dp.message_handler()
+async def send(message:types.Message):
+    await message.answer("iltimas knopkadagi kamandalardan birin tanlan,basqa buyriqlar qatelikke alip keledi")
+
+if __name__=='__main__':
+    executor.start_polling(dp,skip_updates=True)
+
+gitadd..
+
+from aiogram.utils import executor
+from aiogram.types import ReplyKeyboardMarkup ,KeyboardButton, ReplyKeyboardRemove
+
+deletebtn = KeyboardButton("Knopkalardi joq etiw")
+delete= ReplyKeyboardMarkup(resize_keyboard=True).add(deletebtn)
+
+mainmenu1=KeyboardButton("bas menyuga qaytiw 🔄")
+mainmenu= ReplyKeyboardMarkup(resize_keyboard=True).add(mainmenu1)
+
+getbak = KeyboardButton("arqaga qaytiw ↩️")
+btnbak= ReplyKeyboardMarkup(resize_keyboard=True).add(getbak)
+
+
+
+btn1 = KeyboardButton("Uzbek 🇺🇿 ")
+btn2 = KeyboardButton("English 🇺🇸")
+btn3 = KeyboardButton("Korean 🇰🇷 ")
+btn4 = KeyboardButton("French 🇫🇷")
+btn5 = KeyboardButton("Arabic 🇸🇦")
+btn7 = KeyboardButton("QR code arqali 🧑‍💻")
+btn6 = KeyboardButton("Text tarizinde aliw 💬")
+
+
+telegram_bot = ReplyKeyboardMarkup(resize_keyboard=True).add(btn1).add(btn2).add(btn3).add(btn4).add(btn5).add(btn7).add(btn6).add(deletebtn).add(mainmenu1).add(getbak)
+
+qr1 = KeyboardButton("ozbek tili")
+qr2 = KeyboardButton("ingliz tili")
+qr3 = KeyboardButton("koreys tili")
+qr4 = KeyboardButton("Fransuz tili")
+qr5 = KeyboardButton("Arab tili")
+qr9 = KeyboardButton("Audio arqali 🎧")
+qr10 = KeyboardButton("Text tarizinde aliw 💬")
+
+qrkod= ReplyKeyboardMarkup(resize_keyboard=True).add(qr1).add(qr2).add(qr3).add(qr4).add(qr5).add(qr9).add(qr10).add(mainmenu1).add(deletebtn).add(getbak)
+
+mainmenu1=KeyboardButton("bas menyuga qaytiw 🔄")
+mainmenu= ReplyKeyboardMarkup(resize_keyboard=True).add(mainmenu1)
+
+getbak = KeyboardButton("arqaga qaytiw ↩️")
+btnbak= ReplyKeyboardMarkup(resize_keyboard=True).add(getbak)
+
+btnget1 = KeyboardButton("Audio arqali 🎧")
+btnget2= KeyboardButton("QR code arqali 🧑‍💻")
+btnget3= KeyboardButton("Text tarizinde aliw 💬")
+btnget4= KeyboardButton("Menin menen baylanis")
+
+getinfo= ReplyKeyboardMarkup(resize_keyboard=True).add(btnget1).add(btnget2).add(btnget3).add(btnget4)
+
+t1 = KeyboardButton("ozbek_tili")
+t2 = KeyboardButton("ingliz_tili")
+t3 = KeyboardButton("koreys_tili")
+t4 = KeyboardButton("Fransuz_tili")
+t5 = KeyboardButton("Arab_tili")
+# t6 = KeyboardButton("bas menyuga qaytiw 🔄")
+t8 = KeyboardButton("Audio arqali 🎧")
+t9 = KeyboardButton("QR code arqali 🧑‍💻")
+# t7 = KeyboardButton("Knopkalardi joq etiw")
+# t10 = KeyboardButton("arqaga qaytiw ↩️")
+
+
+txtbtn= ReplyKeyboardMarkup(resize_keyboard=True).add(t1,t2,t3,t4,t5).add(t8).add(t9).add(mainmenu1).add(deletebtn).add(getbak)
+
+con1 = KeyboardButton("telefon arqali")
+con2 = KeyboardButton("email yamasa sms telegram arqali")
+
+getcon= ReplyKeyboardMarkup(resize_keyboard=True).add(con1).add(con2).add(mainmenu1).add(deletebtn)
+
+
+deletebtn = KeyboardButton("Knopkalardi joq etiw")
+delete= ReplyKeyboardMarkup(resize_keyboard=True).add(deletebtn)
+
+mainmenu1=KeyboardButton("bas menyuga qaytiw 🔄")
+mainmenu= ReplyKeyboardMarkup(resize_keyboard=True).add(mainmenu1)
+
+getbak = KeyboardButton("arqaga qaytiw ↩️")
+btnbak= ReplyKeyboardMarkup(resize_keyboard=True).add(getbak)
+
